@@ -38,11 +38,11 @@ endfunction
 
 function! test#javascript#reactscripts#executable() abort
   if filereadable('node_modules/.bin/react-app-rewired')
-    return 'node_modules/.bin/react-app-rewired test'
+    return 'node_modules/.bin/react-app-rewired test --env=jsdom --coverage --watchAll=false'
   elseif filereadable('node_modules/.bin/react-scripts')
-    return 'node_modules/.bin/react-scripts test'
+    return 'node_modules/.bin/react-scripts test --env=jsdom --coverage --watchAll=false'
   else
-    return 'react-scripts test'
+    return 'react-scripts test --env=jsdom --coverage --watchAll=false'
   endif
 endfunction
 
